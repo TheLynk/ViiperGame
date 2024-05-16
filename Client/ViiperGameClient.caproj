@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>ViiperGame</name>
+    <name>ViiperGameClient</name>
     <description></description>
     <version>0.0.0.1</version>
     <author></author>
@@ -11,6 +11,7 @@
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors />
@@ -48,15 +49,20 @@
         <object-type name="Text2" sid="101704525293179">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Multiplayer" sid="451693188505512">
+            <plugin id="Multiplayer" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Client.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>EventClient.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Multiplayer" uid="3" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

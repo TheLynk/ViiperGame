@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
+    <name>Serveur</name>
     <sid>8873350371196689</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>EventServeur</event-sheet>
     <size>
         <width>3840</width>
         <height>2160</height>
@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Text" uid="0">
+                <instance type="TextTitre" uid="0">
                     <properties>
                         <text>ViiperGame</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -44,8 +44,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>595</x>
-                        <y>254</y>
+                        <x>1325</x>
+                        <y>8</y>
                         <z>0</z>
                         <width>596</width>
                         <height>337</height>
@@ -56,55 +56,30 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Button" uid="1">
+                <instance type="TextBox" uid="1">
                     <properties>
-                        <type>Button</type>
-                        <text>OK</text>
+                        <text></text>
+                        <placeholder></placeholder>
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
+                        <read-only>Yes</read-only>
+                        <spell-check>No</spell-check>
+                        <type>Textarea</type>
                         <auto-font-size>Yes</auto-font-size>
                         <id-optional></id-optional>
-                        <checked>No</checked>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>826</x>
-                        <y>603</y>
+                        <x>9</x>
+                        <y>7</y>
                         <z>0</z>
-                        <width>72</width>
-                        <height>24</height>
+                        <width>756</width>
+                        <height>433</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                    </world>
-                </instance>
-                <instance type="Text2" uid="2">
-                    <properties>
-                        <text>Text</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-16</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1079</x>
-                        <y>604</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>30</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>

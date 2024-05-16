@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventServeur</name>
+    <events>
+        <event-block sid="954066238642656">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="649421085291897" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Connect" sid="149330131182426" type="Multiplayer">
+                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="458141399712722" type="TextBox">
+                    <param id="0" name="Text">&quot;connection en cours au serveur Scirra&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="487037822253602">
+            <conditions>
+                <condition id="2" name="On connected" sid="337600862348504" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="440202421817561" type="TextBox">
+                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Connection au serveur au Scirra réussi&quot;</param>
+                </action>
+                <action id="4" name="Log in" sid="841531930556144" type="Multiplayer">
+                    <param id="0" name="Alias">&quot;Serveur&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="389342278776852" type="TextBox">
+                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Login en cours&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="604383850128629">
+            <conditions>
+                <condition id="4" name="On logged in" sid="483555723577612" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="791136752846796" type="TextBox">
+                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Login Réussir&quot;</param>
+                </action>
+                <action id="5" name="Join room" sid="422641983451875" type="Multiplayer">
+                    <param id="0" name="Game">&quot;ViiperGame&quot;</param>
+                    <param id="1" name="Instance">&quot;Main&quot;</param>
+                    <param id="2" name="Room">&quot;Main&quot;</param>
+                    <param id="3" name="Max peers">0</param>
+                </action>
+                <action id="0" name="Set text" sid="194730296038103" type="TextBox">
+                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Connection en cours a la Room&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="514656532610165">
+            <conditions>
+                <condition id="5" name="On joined room" sid="151224805413156" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="959138148750538" type="TextBox">
+                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Connection a la Room réussie&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="853407280355723">
+            <conditions>
+                <condition id="11" name="On peer connected" sid="106113031332011" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="348855636850067" type="TextBox">
+                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Un joueur c&apos;est connecter, il se nome : &quot; &amp; Multiplayer.PeerAlias</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
