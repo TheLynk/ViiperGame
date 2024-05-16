@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventClient</name>
+    <events>
+        <event-block sid="168285172921708">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="865157461122791" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Connect" sid="651285630547389" type="Multiplayer">
+                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="745809031744108">
+            <conditions>
+                <condition id="2" name="On connected" sid="345850728773418" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="4" name="Log in" sid="508009347375311" type="Multiplayer">
+                    <param id="0" name="Alias">&quot;Client&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="669430891651188">
+            <conditions>
+                <condition id="4" name="On logged in" sid="738979683997780" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="5" name="Join room" sid="821138908246705" type="Multiplayer">
+                    <param id="0" name="Game">&quot;ViiperGame&quot;</param>
+                    <param id="1" name="Instance">&quot;Main&quot;</param>
+                    <param id="2" name="Room">&quot;Main&quot;</param>
+                    <param id="3" name="Max peers">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="352165734919388">
+            <conditions>
+                <condition id="5" name="On joined room" sid="664045707818927" type="Multiplayer" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="934898454799713">
+            <conditions>
+                <condition id="0" name="On clicked" sid="699371894683716" type="Button" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="619116772940696" type="Text2">
+                    <param id="0" name="Text">&quot;Bravo tu  as fini le jeu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

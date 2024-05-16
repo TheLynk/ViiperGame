@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>ViiperGame</name>
+    <name>ViiperGameServeur</name>
     <description></description>
     <version>0.0.0.1</version>
     <author></author>
@@ -10,8 +10,9 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -39,24 +40,26 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="Text" sid="949056596920734">
+        <object-type name="TextTitre" sid="949056596920734">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Button" sid="671005897919862">
-            <plugin id="Button" />
+        <object-type name="Multiplayer" sid="131323344450938">
+            <plugin id="Multiplayer" />
         </object-type>
-        <object-type name="Text2" sid="101704525293179">
-            <plugin id="Text" />
+        <object-type name="TextBox" sid="421688588904951">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Serveur.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>EventServeur.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Multiplayer" uid="3" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>
