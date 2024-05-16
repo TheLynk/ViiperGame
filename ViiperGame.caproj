@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors />
@@ -39,6 +40,12 @@
     </configuration-settings>
     <object-folder>
         <object-type name="Text" sid="949056596920734">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Button" sid="671005897919862">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Text2" sid="101704525293179">
             <plugin id="Text" />
         </object-type>
     </object-folder>
