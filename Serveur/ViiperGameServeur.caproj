@@ -10,6 +10,8 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
@@ -40,14 +42,38 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
+        <object-folder name="Ressource">
+            <object-type name="LocalStorage" sid="201880048141223">
+                <plugin id="LocalStorage" />
+            </object-type>
+            <object-type name="Multiplayer" sid="131323344450938">
+                <plugin id="Multiplayer" />
+            </object-type>
+        </object-folder>
+        <object-folder name="TextBox">
+            <object-type name="TextBoxAlias" sid="920175418740903">
+                <plugin id="TextBox" />
+            </object-type>
+            <object-type name="TextBoxLog" sid="421688588904951">
+                <plugin id="TextBox" />
+            </object-type>
+            <object-type name="TextBoxNameSlot" sid="939814067682408">
+                <plugin id="TextBox" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Button">
+            <object-type name="ButtonCheckSave" sid="616401759904614">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="ButtonResetSave" sid="818169560052629">
+                <plugin id="Button" />
+                <instance-variables>
+                    <instance-variable name="Reset" sid="985263859456274" type="boolean" />
+                </instance-variables>
+            </object-type>
+        </object-folder>
         <object-type name="TextTitre" sid="949056596920734">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="Multiplayer" sid="131323344450938">
-            <plugin id="Multiplayer" />
-        </object-type>
-        <object-type name="TextBox" sid="421688588904951">
-            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />
@@ -59,6 +85,7 @@
     </event-folder>
     <global-instances>
         <global-instance type="Multiplayer" uid="3" />
+        <global-instance type="LocalStorage" uid="5" />
     </global-instances>
     <sounds-folder />
     <music-folder />

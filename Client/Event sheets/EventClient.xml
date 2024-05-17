@@ -3,52 +3,149 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EventClient</name>
     <events>
-        <event-block sid="168285172921708">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="865157461122791" type="System" />
-            </conditions>
-            <actions>
-                <action id="1" name="Connect" sid="651285630547389" type="Multiplayer">
-                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="745809031744108">
-            <conditions>
-                <condition id="2" name="On connected" sid="345850728773418" type="Multiplayer" />
-            </conditions>
-            <actions>
-                <action id="4" name="Log in" sid="508009347375311" type="Multiplayer">
-                    <param id="0" name="Alias">&quot;Client&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="669430891651188">
-            <conditions>
-                <condition id="4" name="On logged in" sid="738979683997780" type="Multiplayer" />
-            </conditions>
-            <actions>
-                <action id="5" name="Join room" sid="821138908246705" type="Multiplayer">
-                    <param id="0" name="Game">&quot;ViiperGame&quot;</param>
-                    <param id="1" name="Instance">&quot;Main&quot;</param>
-                    <param id="2" name="Room">&quot;Main&quot;</param>
-                    <param id="3" name="Max peers">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="352165734919388">
-            <conditions>
-                <condition id="5" name="On joined room" sid="664045707818927" type="Multiplayer" />
-            </conditions>
-            <actions />
-        </event-block>
+        <variable comment="Chargement des donné depuis le serveur" constant="0" name="LoadMode" sid="651067348407269" static="0" type="text">&quot;false&quot;</variable>
+        <event-group description="" sid="879539345155828" title="Connection au serveur">
+            <sub-events>
+                <event-block sid="168285172921708">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="865157461122791" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Connect" sid="651285630547389" type="Multiplayer">
+                            <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="384369050515291" type="TextGameVersion">
+                            <param id="0" name="Text">&quot;Version : &quot; &amp; projectversion</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="745809031744108">
+                    <conditions>
+                        <condition id="2" name="On connected" sid="345850728773418" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Log in" sid="508009347375311" type="Multiplayer">
+                            <param id="0" name="Alias">&quot;Client&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="669430891651188">
+                    <conditions>
+                        <condition id="4" name="On logged in" sid="738979683997780" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Join room" sid="821138908246705" type="Multiplayer">
+                            <param id="0" name="Game">&quot;ViiperGame&quot;</param>
+                            <param id="1" name="Instance">&quot;Main&quot;</param>
+                            <param id="2" name="Room">&quot;Main&quot;</param>
+                            <param id="3" name="Max peers">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="352165734919388">
+                    <conditions>
+                        <condition id="5" name="On joined room" sid="664045707818927" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="828004304142858" type="System">
+                            <param id="0" name="Variable">LoadMode</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-block sid="934898454799713">
             <conditions>
-                <condition id="0" name="On clicked" sid="699371894683716" type="Button" />
+                <condition id="0" name="On clicked" sid="699371894683716" type="ButtonWin" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="619116772940696" type="Text2">
+                <action id="0" name="Set text" sid="619116772940696" type="TextWin">
                     <param id="0" name="Text">&quot;Bravo tu  as fini le jeu&quot;</param>
+                </action>
+                <action id="8" name="Send message" sid="800388293991291" type="Multiplayer">
+                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                    <param id="1" name="Tag">&quot;SaveWin&quot;</param>
+                    <param id="2" name="Message">&quot;Win&quot;</param>
+                    <param id="3" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="690386469436198">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="865829261866082" type="System">
+                    <param id="0" name="Variable">LoadMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;true&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="429912020960786" type="System">
+                    <param id="0" name="Variable">LoadMode</param>
+                    <param id="1" name="Value">&quot;false&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="445016046119758" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="8" name="Send message" sid="431812428554189" type="Multiplayer">
+                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                    <param id="1" name="Tag">&quot;CheckVersion&quot;</param>
+                    <param id="2" name="Message">projectversion</param>
+                    <param id="3" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="316600124695261">
+            <conditions>
+                <condition id="15" name="On peer message" sid="747525205792669" type="Multiplayer">
+                    <param id="0" name="Tag">&quot;CheckVersion&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="724799178182259">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="365444092036758" type="System">
+                            <param id="0" name="First value">&quot;Même Version&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">str(Multiplayer.Message)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Send message" sid="941860779675304" type="Multiplayer">
+                            <param id="0" name="Peer ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;CheckWin&quot;</param>
+                            <param id="2" name="Message">&quot;&quot;</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="836841443084253">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="823062681536658" type="System">
+                            <param id="0" name="First value">&quot;Même Version&quot;</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">str(Multiplayer.Message)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Disconnect" sid="756884736547336" type="Multiplayer" />
+                        <action id="0" name="Set text" sid="302693566436496" type="TextWin">
+                            <param id="0" name="Text">&quot;Mauvaise Version Entre le client et le serveur&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="854631281680532">
+            <conditions>
+                <condition id="15" name="On peer message" sid="204933905607973" type="Multiplayer">
+                    <param id="0" name="Tag">&quot;LoadWin&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="437581455856205" type="TextWin">
+                    <param id="0" name="Text">&quot;Bravo tu  as fini le jeu (chargement)&quot;</param>
                 </action>
             </actions>
         </event-block>
