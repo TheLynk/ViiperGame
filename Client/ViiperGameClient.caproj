@@ -56,6 +56,9 @@
         <object-type name="ButtonWin" sid="671005897919862">
             <plugin id="Button" />
         </object-type>
+        <object-type name="TextGameVersion" sid="923325886248425">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

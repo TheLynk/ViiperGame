@@ -57,6 +57,9 @@
             <object-type name="TextBoxLog" sid="421688588904951">
                 <plugin id="TextBox" />
             </object-type>
+            <object-type name="TextBoxNameSlot" sid="939814067682408">
+                <plugin id="TextBox" />
+            </object-type>
         </object-folder>
         <object-folder name="Button">
             <object-type name="ButtonCheckSave" sid="616401759904614">
