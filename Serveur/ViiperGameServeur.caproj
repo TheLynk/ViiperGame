@@ -58,11 +58,19 @@
                 <plugin id="TextBox" />
             </object-type>
         </object-folder>
+        <object-folder name="Button">
+            <object-type name="ButtonCheckSave" sid="616401759904614">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="ButtonResetSave" sid="818169560052629">
+                <plugin id="Button" />
+                <instance-variables>
+                    <instance-variable name="Reset" sid="985263859456274" type="boolean" />
+                </instance-variables>
+            </object-type>
+        </object-folder>
         <object-type name="TextTitre" sid="949056596920734">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="Buttontest" sid="616401759904614">
-            <plugin id="Button" />
         </object-type>
     </object-folder>
     <families />

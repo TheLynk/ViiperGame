@@ -97,10 +97,24 @@
         </event-group>
         <event-block sid="673397429224082">
             <conditions>
-                <condition id="0" name="On clicked" sid="600564930768398" type="Buttontest" />
+                <condition id="0" name="On clicked" sid="600564930768398" type="ButtonCheckSave" />
             </conditions>
             <actions>
                 <action id="5" name="Check item exists" sid="962147663802517" type="LocalStorage">
+                    <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="934794172645193">
+            <conditions>
+                <condition id="0" name="On clicked" sid="962791217939997" type="ButtonResetSave" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="841629561089594" type="ButtonResetSave">
+                    <param id="0" name="Instance variable">Reset</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="5" name="Check item exists" sid="629083204626793" type="LocalStorage">
                     <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
                 </action>
             </actions>
@@ -111,9 +125,50 @@
                     <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
                 </condition>
             </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="254459166566473">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="798720827818474" type="ButtonResetSave">
+                            <param id="0" name="Instance variable">Reset</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="251161345694107" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; TextBoxAlias.Text &amp;&quot; a déjà win&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="162548620388740">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="741130111262438" type="ButtonResetSave">
+                            <param id="0" name="Instance variable">Reset</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Remove item" sid="833010970943688" type="LocalStorage">
+                            <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="228906814455628" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;La Save a était remis a 0 de &quot; &amp; TextBoxAlias.Text</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="773985221005965" type="ButtonResetSave">
+                            <param id="0" name="Instance variable">Reset</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="320672433015892">
+            <conditions>
+                <condition id="10" name="On item missing" sid="231401544556818" type="LocalStorage">
+                    <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
+                </condition>
+            </conditions>
             <actions>
-                <action id="0" name="Set text" sid="251161345694107" type="TextBoxLog">
-                    <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; TextBoxAlias.Text &amp;&quot; a déjà win&quot;</param>
+                <action id="0" name="Set text" sid="105580030202632" type="TextBoxLog">
+                    <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; TextBoxAlias.Text &amp;&quot; a aucune save&quot;</param>
                 </action>
             </actions>
         </event-block>
