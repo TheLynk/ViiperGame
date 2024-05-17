@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventGame</name>
+    <events>
+        <variable constant="0" name="AutoClick" sid="739680984290257" static="0" type="number">0</variable>
+        <variable constant="0" name="Click" sid="130897786653030" static="0" type="number">0</variable>
+        <variable constant="0" name="ClickPuissance" sid="845141818491113" static="0" type="number">1</variable>
+        <event-block sid="851229783949142">
+            <conditions>
+                <condition id="17" name="On tap object" sid="597821607844330" type="Touch">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="861010539527046" type="System">
+                    <param id="0" name="Variable">Click</param>
+                    <param id="1" name="Value">ClickPuissance</param>
+                </action>
+                <action id="0" name="Set text" sid="638016643926750" type="TextClickClickPuissance">
+                    <param id="0" name="Text">&quot;Click Puissance : &quot; &amp; ClickPuissance &amp; &quot; | &quot; &amp; &quot;Click : &quot; &amp; Click</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="152055983116295">
+            <conditions>
+                <condition id="0" name="On clicked" sid="402832568236355" type="Button" />
+                <condition id="-14" name="Compare variable" sid="617428851670081" type="System">
+                    <param id="0" name="Variable">Click</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">ClickPuissance * 10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="385136895101129" type="System">
+                    <param id="0" name="Variable">Click</param>
+                    <param id="1" name="Value">ClickPuissance * 10</param>
+                </action>
+                <action id="-10" name="Add to" sid="774836639482752" type="System">
+                    <param id="0" name="Variable">ClickPuissance</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="285913233600571" type="TextClickClickPuissance">
+                    <param id="0" name="Text">&quot;Click Puissance : &quot; &amp; ClickPuissance &amp; &quot; | &quot; &amp; &quot;Click : &quot; &amp; Click</param>
+                </action>
+                <action id="0" name="Set text" sid="156326980303830" type="Button">
+                    <param id="0" name="Text">&quot;Acheter Upgrade Click Puissance | Prix : &quot; &amp; ClickPuissance * 10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="319897840786222">
+            <conditions>
+                <condition id="0" name="On clicked" sid="812757272952555" type="ButtonClickAuto" />
+                <condition id="-8" name="Compare two values" sid="383219733946117" type="System">
+                    <param id="0" name="First value">Click </param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">(AutoClick + 1) * 10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="212018529800329" type="System">
+                    <param id="0" name="Variable">Click</param>
+                    <param id="1" name="Value">(AutoClick + 1) * 10</param>
+                </action>
+                <action id="-10" name="Add to" sid="760878829526276" type="System">
+                    <param id="0" name="Variable">AutoClick</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="225831246355689" type="TextClickSeconde">
+                    <param id="0" name="Text">&quot;Click Seconde : &quot; &amp; AutoClick &amp; &quot;s&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="364416834827416" type="ButtonClickAuto">
+                    <param id="0" name="Text">&quot;Acheter Upgrade Click Auto | Prix : &quot; &amp; (AutoClick + 1) * 10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="977147075708816">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="908184476468672" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set progress" sid="846640558631358" type="ProgressBar">
+                    <param id="0" name="Value">ProgressBar.Progress + 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="860651245865908">
+            <conditions>
+                <condition id="1" name="Compare progress" sid="120799655898412" type="ProgressBar">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="299614505902359" type="System">
+                    <param id="0" name="Variable">Click</param>
+                    <param id="1" name="Value">AutoClick</param>
+                </action>
+                <action id="0" name="Set text" sid="895107050963867" type="TextClickClickPuissance">
+                    <param id="0" name="Text">&quot;Click Puissance : &quot; &amp; ClickPuissance &amp; &quot; | &quot; &amp; &quot;Click : &quot; &amp; Click</param>
+                </action>
+                <action id="3" name="Set progress" sid="643508537415331" type="ProgressBar">
+                    <param id="0" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

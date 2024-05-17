@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Client</name>
-    <sid>8873350371196689</sid>
-    <event-sheet>EventClient</event-sheet>
+    <name>Game</name>
+    <sid>401753944925385</sid>
+    <event-sheet>EventGame</event-sheet>
     <size>
-        <width>3600</width>
-        <height>6400</height>
+        <width>1708</width>
+        <height>960</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="8722530541249526">
+        <layer name="Layer 0" sid="976533233609631">
             <initially-visible>1</initially-visible>
             <background-color>135,135,135</background-color>
             <transparent>0</transparent>
@@ -29,11 +29,33 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TextTitre" uid="0">
+                <instance type="Sprite" uid="5">
                     <properties>
-                        <text>ViiperGame</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-96,400,0</font>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>172.197402954</x>
+                        <y>177.876922607</y>
+                        <z>0</z>
+                        <width>102.400001526</width>
+                        <height>102.400001526</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TextClickClickPuissance" uid="7">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -44,11 +66,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>595</x>
-                        <y>254</y>
+                        <x>0.032646179</x>
+                        <y>-0.497375488</y>
                         <z>0</z>
-                        <width>596</width>
-                        <height>337</height>
+                        <width>360.310760498</width>
+                        <height>30</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -56,10 +78,10 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ButtonWin" uid="1">
+                <instance type="Button" uid="8">
                     <properties>
                         <type>Button</type>
-                        <text>Win</text>
+                        <text>Acheter Upgrade Click Puissance</text>
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -70,24 +92,24 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>826</x>
-                        <y>603</y>
+                        <x>0.597167969</x>
+                        <y>613.650146484</y>
                         <z>0</z>
-                        <width>72</width>
+                        <width>361.575042725</width>
                         <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
                     </world>
                 </instance>
-                <instance type="TextWin" uid="2">
+                <instance type="TextClickSeconde" uid="9">
                     <properties>
                         <text>Text</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -95,11 +117,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1079</x>
-                        <y>604</y>
+                        <x>-0.531654358</x>
+                        <y>25.468261719</y>
                         <z>0</z>
-                        <width>307</width>
-                        <height>97</height>
+                        <width>359.746246338</width>
+                        <height>30</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -107,31 +129,49 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="TextGameVersion" uid="4">
+                <instance type="ButtonClickAuto" uid="10">
                     <properties>
-                        <text>Text</text>
+                        <type>Button</type>
+                        <text>Acheter Upgrade Click Auto</text>
+                        <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-16</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Right</horizontal-alignment>
-                        <vertical-alignment>Bottom</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
+                        <enabled>Yes</enabled>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                        <checked>No</checked>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1584</x>
-                        <y>1048</y>
+                        <x>0.597160339</x>
+                        <y>589.942199707</y>
                         <z>0</z>
-                        <width>335</width>
-                        <height>30</height>
+                        <width>359.881713867</width>
+                        <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ProgressBar" uid="11">
+                    <properties>
+                        <value>0</value>
+                        <maximum>100</maximum>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-0.531658173</x>
+                        <y>565.10534668</y>
+                        <z>0</z>
+                        <width>360.875061035</width>
+                        <height>25</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>
