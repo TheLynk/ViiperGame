@@ -12,7 +12,10 @@
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -20,11 +23,12 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1920</width>
-        <height>1080</height>
+        <width>360</width>
+        <height>640</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Game</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -40,28 +44,83 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="Text" sid="949056596920734">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="Button" sid="671005897919862">
+        <object-folder name="Ressource">
+            <object-type name="Multiplayer" sid="451693188505512">
+                <plugin id="Multiplayer" />
+            </object-type>
+            <object-type name="Touch" sid="893533996898698">
+                <plugin id="Touch" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Text">
+            <object-type name="TextTitre" sid="949056596920734">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextWin" sid="101704525293179">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-type name="ButtonWin" sid="671005897919862">
             <plugin id="Button" />
         </object-type>
-        <object-type name="Text2" sid="101704525293179">
+        <object-type name="TextGameVersion" sid="923325886248425">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Multiplayer" sid="451693188505512">
-            <plugin id="Multiplayer" />
+        <object-type name="Sprite" sid="835301069184564">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="608975110287277" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\DossiersWindows\Documents\GitHub\ViiperGame\Texture\Pierre.png">
+                        <collision-poly>
+                            <point x="0.28125" y="0.289063" />
+                            <point x="0.480469" y="0.234375" />
+                            <point x="0.724609" y="0.21875" />
+                            <point x="0.751953" y="0.296875" />
+                            <point x="0.849609" y="0.34375" />
+                            <point x="0.849609" y="0.720703" />
+                            <point x="0.583984" y="0.861328" />
+                            <point x="0.132813" y="0.773438" />
+                            <point x="0.162109" y="0.482422" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextClickClickPuissance" sid="334485365614640">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Button" sid="889781028401992">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="TextClickSeconde" sid="901604848254181">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Button2" sid="143506836366838">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="ButtonClickAuto" sid="667425732877544">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="ProgressBar" sid="631924019623275">
+            <plugin id="progressbar" />
         </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Client.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>EventClient.xml</event-sheet>
+        <event-sheet>EventGame.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Multiplayer" uid="3" />
+        <global-instance type="Touch" uid="6">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />
@@ -73,6 +132,9 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="texture">
+            <file name="Pierre.png" />
         </file-folder>
     </files-folder>
 </c2project>
