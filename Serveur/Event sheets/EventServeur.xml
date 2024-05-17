@@ -3,71 +3,117 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EventServeur</name>
     <events>
-        <event-block sid="954066238642656">
+        <event-group description="" sid="303994934108806" title="Lancement Serveur">
+            <sub-events>
+                <event-block sid="954066238642656">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="649421085291897" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Connect" sid="149330131182426" type="Multiplayer">
+                            <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="458141399712722" type="TextBoxLog">
+                            <param id="0" name="Text">&quot;connection en cours au serveur Scirra&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="487037822253602">
+                    <conditions>
+                        <condition id="2" name="On connected" sid="337600862348504" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="440202421817561" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;Connection au serveur au Scirra réussi&quot;</param>
+                        </action>
+                        <action id="4" name="Log in" sid="841531930556144" type="Multiplayer">
+                            <param id="0" name="Alias">&quot;Serveur&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="389342278776852" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;Login en cours&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="604383850128629">
+                    <conditions>
+                        <condition id="4" name="On logged in" sid="483555723577612" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="791136752846796" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;Login Réussir&quot;</param>
+                        </action>
+                        <action id="5" name="Join room" sid="422641983451875" type="Multiplayer">
+                            <param id="0" name="Game">&quot;ViiperGame&quot;</param>
+                            <param id="1" name="Instance">&quot;Main&quot;</param>
+                            <param id="2" name="Room">&quot;Main&quot;</param>
+                            <param id="3" name="Max peers">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="194730296038103" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;Connection en cours a la Room&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="514656532610165">
+                    <conditions>
+                        <condition id="5" name="On joined room" sid="151224805413156" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="959138148750538" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;Connection a la Room réussie&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="853407280355723">
+                    <conditions>
+                        <condition id="11" name="On peer connected" sid="106113031332011" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="348855636850067" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; &quot;Un joueur c&apos;est connecter, il se nome : &quot; &amp; Multiplayer.PeerAlias</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="904530917567506" title="On Peer Message">
+            <sub-events>
+                <event-block sid="412306526188211">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="668648354005818" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;SaveWin&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="646134015850258" type="LocalStorage">
+                            <param id="0" name="Key">Multiplayer.FromAlias &amp; &quot;SaveWin&quot;</param>
+                            <param id="1" name="Value">Multiplayer.Message</param>
+                        </action>
+                        <action id="0" name="Set text" sid="771906560114929" type="TextBoxLog">
+                            <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; Multiplayer.FromAlias &amp; &quot; a win&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="673397429224082">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="649421085291897" type="System" />
+                <condition id="0" name="On clicked" sid="600564930768398" type="Buttontest" />
             </conditions>
             <actions>
-                <action id="1" name="Connect" sid="149330131182426" type="Multiplayer">
-                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
-                </action>
-                <action id="0" name="Set text" sid="458141399712722" type="TextBox">
-                    <param id="0" name="Text">&quot;connection en cours au serveur Scirra&quot;</param>
+                <action id="5" name="Check item exists" sid="962147663802517" type="LocalStorage">
+                    <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="487037822253602">
+        <event-block sid="282696621189122">
             <conditions>
-                <condition id="2" name="On connected" sid="337600862348504" type="Multiplayer" />
+                <condition id="9" name="On item exists" sid="147468469507606" type="LocalStorage">
+                    <param id="0" name="Key">TextBoxAlias.Text &amp; &quot;SaveWin&quot;</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="440202421817561" type="TextBox">
-                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Connection au serveur au Scirra réussi&quot;</param>
-                </action>
-                <action id="4" name="Log in" sid="841531930556144" type="Multiplayer">
-                    <param id="0" name="Alias">&quot;Serveur&quot;</param>
-                </action>
-                <action id="0" name="Set text" sid="389342278776852" type="TextBox">
-                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Login en cours&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="604383850128629">
-            <conditions>
-                <condition id="4" name="On logged in" sid="483555723577612" type="Multiplayer" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="791136752846796" type="TextBox">
-                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Login Réussir&quot;</param>
-                </action>
-                <action id="5" name="Join room" sid="422641983451875" type="Multiplayer">
-                    <param id="0" name="Game">&quot;ViiperGame&quot;</param>
-                    <param id="1" name="Instance">&quot;Main&quot;</param>
-                    <param id="2" name="Room">&quot;Main&quot;</param>
-                    <param id="3" name="Max peers">0</param>
-                </action>
-                <action id="0" name="Set text" sid="194730296038103" type="TextBox">
-                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Connection en cours a la Room&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="514656532610165">
-            <conditions>
-                <condition id="5" name="On joined room" sid="151224805413156" type="Multiplayer" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="959138148750538" type="TextBox">
-                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Connection a la Room réussie&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="853407280355723">
-            <conditions>
-                <condition id="11" name="On peer connected" sid="106113031332011" type="Multiplayer" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="348855636850067" type="TextBox">
-                    <param id="0" name="Text">TextBox.Text &amp; newline &amp; &quot;Un joueur c&apos;est connecter, il se nome : &quot; &amp; Multiplayer.PeerAlias</param>
+                <action id="0" name="Set text" sid="251161345694107" type="TextBoxLog">
+                    <param id="0" name="Text">TextBoxLog.Text &amp; newline &amp; TextBoxAlias.Text &amp;&quot; a déjà win&quot;</param>
                 </action>
             </actions>
         </event-block>

@@ -40,17 +40,21 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="Text" sid="949056596920734">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="Button" sid="671005897919862">
+        <object-folder name="Ressource">
+            <object-type name="Multiplayer" sid="451693188505512">
+                <plugin id="Multiplayer" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Text">
+            <object-type name="TextTitre" sid="949056596920734">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextWin" sid="101704525293179">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-type name="ButtonWin" sid="671005897919862">
             <plugin id="Button" />
-        </object-type>
-        <object-type name="Text2" sid="101704525293179">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="Multiplayer" sid="451693188505512">
-            <plugin id="Multiplayer" />
         </object-type>
     </object-folder>
     <families />

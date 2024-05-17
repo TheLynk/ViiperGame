@@ -44,11 +44,17 @@
         </event-block>
         <event-block sid="934898454799713">
             <conditions>
-                <condition id="0" name="On clicked" sid="699371894683716" type="Button" />
+                <condition id="0" name="On clicked" sid="699371894683716" type="ButtonWin" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="619116772940696" type="Text2">
+                <action id="0" name="Set text" sid="619116772940696" type="TextWin">
                     <param id="0" name="Text">&quot;Bravo tu  as fini le jeu&quot;</param>
+                </action>
+                <action id="8" name="Send message" sid="800388293991291" type="Multiplayer">
+                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                    <param id="1" name="Tag">&quot;SaveWin&quot;</param>
+                    <param id="2" name="Message">&quot;Win&quot;</param>
+                    <param id="3" name="Mode">0</param>
                 </action>
             </actions>
         </event-block>
